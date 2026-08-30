@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mamta Jewellers | Bikaner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<div class="top">20+ YEARS OF TRUST • GANGASHAHAR, BIKANER • DAILY GOLD & SILVER RATES</div>
+<header><div class="wrap nav">
+<a class="logo" href="#home"><img src="assets/logo.jpg"><span><b>MAMTA</b><small>JEWELLERS • BIKANER</small></span></a>
+<nav><a href="#home">Home</a><a href="#shop">Jewellery</a><a href="#rates">Rates</a><a href="#story">Our Story</a><a href="#contact">Contact</a></nav>
+<div><button id="lang">हिं</button><button id="bag">Bag <b id="count">0</b></button><button id="menu">☰</button></div></div><div id="mobileNav"><a href="#home">Home</a><a href="#shop">Jewellery</a><a href="#rates">Rates</a><a href="#story">Our Story</a><a href="#contact">Contact</a></div></header>
+<section id="home" class="hero"><div class="wrap heroGrid"><div>
+<div class="kicker">MAMTA JEWELLERS • EST. 20+ YEARS</div><h1>Timeless jewellery.<br><i>Made to be yours.</i></h1>
+<p>Elegant gold & silver jewellery from a trusted family store in Gangashahar, Bikaner — now available online.</p>
+<a class="btn gold" href="#shop">Shop Jewellery</a> <a class="btn" href="https://wa.me/919460945330" target="_blank">WhatsApp</a>
+<div class="trust">✦ Gold & Silver &nbsp; ✦ COD &nbsp; ✦ UPI / QR</div></div>
+<div class="rateCard"><div>TODAY'S RATES <small id="updated">Update daily</small></div>
+<p>Gold / gram <strong id="goldHero">₹—</strong></p><p>Silver / gram <strong id="silverHero">₹—</strong></p><small>Rate × weight + making charge</small></div></div></section>
+<section id="rates" class="rates"><div class="wrap rateGrid">
+<div><small>24K GOLD</small><b id="goldRate">Update</b><em>per gram</em></div>
+<div><small>SILVER</small><b id="silverRate">Update</b><em>per gram</em></div>
+<div><small>FORMULA</small><b>Rate × Weight</b><em>+ Making Charge</em></div>
+<div><small>ORDER</small><a href="https://wa.me/919460945330" target="_blank">WhatsApp ↗</a><em>+91 94609 45330</em></div>
+</div></section>
+<section id="shop" class="section"><div class="wrap"><div class="head"><div><div class="kicker">THE COLLECTION</div><h2>Jewellery for every occasion.</h2></div><p>Browse the collection. Prices update automatically when daily metal rates change.</p></div>
+<div class="tools"><div><button class="chip active" data-f="all">All</button><button class="chip" data-f="gold">Gold</button><button class="chip" data-f="silver">Silver</button><button class="chip" data-f="payal">Payal</button><button class="chip" data-f="necklace">Necklaces</button><button class="chip" data-f="earrings">Earrings</button></div><input id="search" placeholder="Search jewellery..."></div>
+<div id="products" class="products"></div></div></section>
+<section id="story" class="section story"><div class="wrap two"><div class="brandPanel"><img src="assets/logo.jpg"><span>GANGASHAHAR • BIKANER</span></div><div>
+<div class="kicker">OUR STORY</div><h2>Two decades of trust.<br><i>One beautiful tradition.</i></h2>
+<p>Mamta Jewellers is a physical jewellery store in Gangashahar, Bikaner, serving customers for more than 20 years. We are now bringing the same trusted experience online.</p>
+<p>Our catalogue is designed around transparent weight-based pricing and easy direct ordering.</p>
+<div class="stats"><b>20+<small>YEARS</small></b><b>GOLD<small>JEWELLERY</small></b><b>SILVER<small>JEWELLERY</small></b></div></div></div></section>
+<section class="section"><div class="wrap"><div class="center head"><div><div class="kicker">HOW IT WORKS</div><h2>Simple. Clear. Personal.</h2></div></div>
+<div class="steps"><div><b>01</b><h3>Choose</h3><p>Pick jewellery and add it to your bag.</p></div><div><b>02</b><h3>Calculate</h3><p>Daily rate × weight + making charge.</p></div><div><b>03</b><h3>Order</h3><p>Send your details and cart to WhatsApp.</p></div><div><b>04</b><h3>Pay</h3><p>Choose COD or UPI / QR payment.</p></div></div></div></section>
+<section id="contact" class="section contact"><div class="wrap two"><div><div class="kicker">VISIT MAMTA JEWELLERS</div><h2>Let's find your<br><i>perfect piece.</i></h2><p>Gangashahar, Bikaner, Rajasthan. Call or WhatsApp for availability and orders.</p><div class="links"><a href="tel:+919460945330">☎ +91 94609 45330</a><a href="https://wa.me/919460945330" target="_blank">◉ WhatsApp</a><span>⌖ Gangashahar, Bikaner</span></div></div>
+<div class="contactBox"><small>READY TO ORDER?</small><h3>Send your jewellery bag to us.</h3><button id="contactOrder" class="btn gold wide">Order on WhatsApp</button></div></div></section>
+<footer><div class="wrap foot"><b>MAMTA JEWELLERS<br><small>Gangashahar • Bikaner</small></b><span>© 2026 Mamta Jewellers</span></div></footer>
+<div id="shade"></div><aside id="drawer"><div class="drawerHead"><h2>Your Bag</h2><button id="closeBag">×</button></div><div id="bagItems"></div><div class="drawerFoot"><div>Estimated Total <strong id="total">₹0</strong></div><small>Final price is confirmed by the shop after checking current rate, weight and making charge.</small><button id="checkout" class="btn gold wide">Checkout</button></div></aside>
+<div id="modal"><div class="modal"><button id="closeModal">×</button><div class="kicker">CHECKOUT</div><h2>Order details</h2><form id="form"><label>Name<input name="name" required></label><label>Mobile<input name="phone" required></label><label>Address<textarea name="address" required rows="3"></textarea></label><label>Payment<select name="payment"><option>Cash on Delivery</option><option>UPI / QR Payment</option></select></label><div class="summary">Items <b id="sumItems">0</b> &nbsp; Estimated <b id="sumTotal">₹0</b></div><button class="btn gold wide">Send Order on WhatsApp</button></form></div></div>
+<script src="rates.js"></script><script src="products.js"></script><script src="script.js"></script></body></html>
