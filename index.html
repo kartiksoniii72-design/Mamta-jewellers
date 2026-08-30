@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mamta Jewellers</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,sans-serif;
+  background:#f8f5ef;
+  color:#222;
+}
+header{
+  background:#111;
+  color:#d4af37;
+  padding:18px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.logo{font-size:25px;font-weight:bold}
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+}
+.cart{
+  background:#d4af37;
+  color:#111;
+  border:0;
+  padding:10px 15px;
+  border-radius:20px;
+  font-weight:bold;
+}
+.hero{
+  padding:55px 6%;
+  text-align:center;
+  background:linear-gradient(135deg,#171717,#4b3510);
+  color:white;
+}
+.hero h1{font-size:42px;color:#e5c45c;margin-bottom:12px}
+.hero p{font-size:18px;margin-bottom:20px}
+.btn{
+  background:#d4af37;
+  border:0;
+  padding:12px 22px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.prices{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:20px;
+  flex-wrap:wrap;
+}
+.price-box{
+  background:white;
+  padding:18px 30px;
+  border-radius:10px;
+  box-shadow:0 3px 12px #ddd;
+}
+.price-box strong{color:#b08a19}
+section{padding:40px 6%}
+.title{
+  text-align:center;
+  margin-bottom:30px;
+  font-size:30px;
+  color:#8b6914;
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+.card{
+  background:white;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 4px 15px #ddd;
+  transition:.2s;
+}
+.card:hover{transform:translateY(-4px)}
+.card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  background:#eee;
+}
+.info{padding:18px}
+.info h3{margin-bottom:8px}
+.weight{color:#777;margin:7px 0}
+.price{
+  font-size:20px;
+  font-weight:bold;
+  color:#a47b08;
+  margin:12px 0;
+}
+.info button{width:100%}
+.about{
+  background:#111;
+  color:white;
+  text-align:center;
+}
+.about h2{color:#d4af37;margin-bottom:15px}
+footer{
+  background:#000;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+#cartPanel{
+  position:fixed;
+  right:-400px;
+  top:0;
+  width:360px;
+  max-width:90%;
+  height:100%;
+  background:white;
+  z-index:20;
+  box-shadow:-5px 0 20px #555;
+  padding:25px;
+  transition:.3s;
+  overflow:auto;
+}
+#cartPanel.open{right:0}
+.close{
+  float:right;
+  border:0;
+  background:none;
+  font-size:25px;
+  cursor:pointer;
+}
+.cart-item{
+  border-bottom:1px solid #ddd;
+  padding:15px 0;
+}
+.total{
+  font-size:22px;
+  font-weight:bold;
+  margin:20px 0;
+}
+.whatsapp{
+  width:100%;
+  background:#25D366;
+  color:white;
+  border:0;
+  padding:14px;
+  border-radius:7px;
+  font-weight:bold;
+  cursor:pointer;
+}
+@media(max-width:600px){
+  .hero h1{font-size:32px}
+  nav{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">✦ Mamta Jewellers</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+  </nav>
+  <button class="cart" onclick="openCart()">🛒 Cart <span id="cartCount">0</span></button>
+</header>
+
+<div id="home" class="hero">
+  <h1>Mamta Jewellers</h1>
+  <p>Beautiful Jewellery • Trusted Quality • Best Designs</p>
+  <button class="btn" onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
+</div>
+
+<div class="prices">
+  <div class="price-box">🥇 Gold Price: <strong>₹14,000 / gram</strong></div>
+  <div class="price-box">🥈 Silver Price: <strong>₹240 / gram</strong></div>
+</div>
+
+<section id="products">
+  <h2 class="title">Our Jewellery Collection</h2>
+
+  <div class="products">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80"
+           alt="Silver Payal">
+      <div class="info">
+        <h3>Silver Payal – 85 Gram</h3>
+        <div class="weight">Weight: 85 gram</div>
+        <div class="weight">Making: ₹700</div>
+        <div class="price">₹21,100 approx.</div>
+        <button class="btn" onclick="addToCart('Silver Payal 85 Gram',21100)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80"
+           alt="Silver Payal">
+      <div class="info">
+        <h3>Silver Payal – 130 Gram</h3>
+        <div class="weight">Weight: 130 gram</div>
+        <div class="weight">Making: ₹700</div>
+        <div class="price">₹31,900 approx.</div>
+        <button class="btn" onclick="addToCart('Silver Payal 130 Gram',31900)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=700&q=80"
+           alt="Mangalsutra">
+      <div class="info">
+        <h3>Mangalsutra</h3>
+        <div class="weight">Weight: 18 gram</div>
+        <div class="weight">Making: ₹2,000</div>
+        <div class="price">₹254,000 approx.</div>
+        <button class="btn" onclick="addToCart('Mangalsutra 18 Gram',254000)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80"
+           alt="Gold Earrings">
+      <div class="info">
+        <h3>Gold Earrings</h3>
+        <div class="weight">Weight: 13 gram</div>
+        <div class="weight">Making: ₹1,000</div>
+        <div class="price">₹183,000 approx.</div>
+        <button class="btn" onclick="addToCart('Gold Earrings 13 Gram',183000)">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2>Why Mamta Jewellers?</h2>
+  <p>Quality Jewellery • Beautiful Designs • Trusted Service</p>
+  <br>
+  <p>📍 Banda Bus, Bikaner</p>
+  <p>📞 9460945330</p>
+</section>
+
+<footer>
+  © 2026 Mamta Jewellers — All Rights Reserved
+</footer>
+
+<div id="cartPanel">
+  <button class="close" onclick="closeCart()">×</button>
+  <h2>🛒 Your Cart</h2>
+  <br>
+  <div id="cartItems"></div>
+  <div class="total">Total: ₹<span id="cartTotal">0</span></div>
+  <button class="whatsapp" onclick="orderWhatsApp()">
+    Order on WhatsApp
+  </button>
+</div>
+
+<script>
+let cart=[];
+
+function addToCart(name,price){
+  cart.push({name:name,price:price});
+  updateCart();
+  openCart();
+}
+
+function updateCart(){
+  document.getElementById("cartCount").innerText=cart.length;
+
+  let html="";
+  let total=0;
+
+  cart.forEach((item,index)=>{
+    total+=item.price;
+    html+=`
+      <div class="cart-item">
+        <b>${item.name}</b><br>
+        ₹${item.price.toLocaleString('en-IN')}
+        <br>
+        <button onclick="removeItem(${index})"
+        style="margin-top:8px;padding:6px 10px;border:0;background:#eee;cursor:pointer">
+        Remove
+        </button>
+      </div>
+    `;
+  });
+
+  if(cart.length===0){
+    html="<p>Your cart is empty.</p>";
+  }
+
+  document.getElementById("cartItems").innerHTML=html;
+  document.getElementById("cartTotal").innerText=total.toLocaleString('en-IN');
+}
+
+function removeItem(index){
+  cart.splice(index,1);
+  updateCart();
+}
+
+function openCart(){
+  document.getElementById("cartPanel").classList.add("open");
+}
+
+function closeCart(){
+  document.getElementById("cartPanel").classList.remove("open");
+}
+
+function orderWhatsApp(){
+  if(cart.length===0){
+    alert("Cart is empty!");
+    return;
+  }
+
+  let message="Namaste Mamta Jewellers,%0A%0AMujhe ye jewellery order karni hai:%0A";
+  let total=0;
+
+  cart.forEach(item=>{
+    message+="%0A• "+item.name+" - ₹"+item.price.toLocaleString('en-IN');
+    total+=item.price;
+  });
+
+  message+="%0A%0ATotal: ₹"+total.toLocaleString('en-IN');
+  message+="%0A%0AName/Address baad mein share karunga.";
+
+  window.open(
+    "https://wa.me/919460945330?text="+message,
+    "_blank"
+  );
+}
+
+updateCart();
+</script>
+
+</body>
+  </html>
